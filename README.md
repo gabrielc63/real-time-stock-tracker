@@ -1,50 +1,94 @@
-# React + TypeScript + Vite
+# Real-Time Stock Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Web Application for tracking stock prices in real-time using Finnhub's WebSocket API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time stock price tracking
+- Price alerts
+- Responsive design
+- Multiple stock tracking
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React 18
+- TypeScript
+- Vite
+- TailwindCSS
+- shadcn/ui components
+- Recharts for data visualization
+- Finnhub WebSocket API
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v16 or higher)
+- npm or yarn
+- Finnhub API key (Get one at [Finnhub.io](https://finnhub.io))
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/stock-tracker-pwa
+cd stock-tracker-pwa
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Create a `.env` file in the root directory:
+
+```env
+VITE_FINNHUB_API_KEY=your_api_key_here
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+## Usage
+
+1. Enter a stock symbol (e.g., AAPL, MSFT)
+2. Set an alert price
+3. Click "Add Stock" to start tracking
+4. View real-time updates in the cards and chart
+
+## Browser Support
+
+The application supports all modern browsers with WebSocket capabilities:
+
+- Chrome (latest)
+- Firefox (latest)
+- Brave (latest)
+- Safari (latest)
+- Edge (latest)
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+### Running Tests
+
+```bash
+npm run test
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
